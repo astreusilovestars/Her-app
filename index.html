@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHID Alerts</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SHID Alerts">
+<link rel="apple-touch-icon" href="icon.png.jpg">
+
+</head>
+<body>
+  <header>
+    <div class="logo">SHID Alerts</div>
+    <div class="icons">
+      <img src="tra.webp" alt="Search" class="icon" id="search-icon"/>
+      <img src="ah.png" alt="Menu" class="icon menu-icon" />
+    </div>
+
+    <div class="search-bar" id="search-bar">
+    <input type="text" id="search-input" placeholder="Type your search..." />
+    <button id="search-btn" onclick="goSearch(event)">Go</button>
+
+  </div>
+  </header>
+
+  <div class="dropdown-menu" id="profile-menu">
+    <div class="menu-content">
+      <button class="menu-btn" onclick="window.location.href='arm.html'">ARM</button>
+      <button class="menu-btn" onclick="window.location.href='disarm.html'">DISARM</button>
+      <button class="menu-btn" onclick="window.location.href='eeprom.html'">EEPROM</button>
+      <button class="menu-btn"onclick="window.location.href='NEWSLETTER.html'">NEWSLETTER</button>
+      <button class="menu-btn" onclick="window.location.href='ABOUT.html'">ABOUT</button>
+      <button class="menu-btn" onclick="window.location.href='HELP.html'">HELP</button>
+
+    </div>
+  </div>
+
+  <main>
+    
+    <section id="home" class="home-section">
+      <h2>SMART HOME INTRUSION DETECTION</h2>
+      <h2>ALERT SYSTEM</h2>
+      <div class="image-container">
+        <img src="glowing.jpg" alt="Arduino 3D" class="arduino" />
+      </div>
+         <button class="shop-button" onclick="window.location.href='shop.html'">Shop now</button>
+        <button class="install-btn" onclick="window.location.href='install.html'">Install Instructions</button>
+
+    </section>
+
+    
+  </main>
+  
+ 
+<script src="main.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>

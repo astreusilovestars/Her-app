@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter Passcode</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #001f3f;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .passcode-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+      width: 280px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .display {
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 15px;
+      padding: 10px;
+      margin-bottom: 20px;
+      letter-spacing: 8px;
+      font-size: 20px;
+      height: 30px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .key {
+      width: 60px;
+      height: 60px;
+      background-color: #004080;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .key:hover {
+      background-color: #0055a5;
+      transform: scale(1.05);
+    }
+
+    .forward-btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      background-color: #00aaff;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .forward-btn:hover {
+      background-color: #0099e6;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disarm System | SHID Alerts</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-bg">
+  <header class="header">
+    <div class="logo">SHID Alerts</div>
+    <div class="header-icons">
+      
+      <a href="index.html" class="home-link" style="font-size:14px; float:left; margin-left:20px;">Home</a>
+
+
+    </div>
+  </header>
+</head>
+<body>
+  <div class="passcode-container">
+    <h2>Enter Passcode</h2>
+    <div id="display" class="display"></div>
+
+    <div class="keypad">
+      <button class="key">1</button>
+      <button class="key">2</button>
+      <button class="key">3</button>
+      <button class="key">4</button>
+      <button class="key">5</button>
+      <button class="key">6</button>
+      <button class="key">7</button>
+      <button class="key">8</button>
+      <button class="key">9</button>
+      <button class="key">*</button>
+      <button class="key">0</button>
+      <button class="key">#</button>
+    </div>
+
+    <button class="forward-btn" id="enter">Forward</button>
+    <div id="message" class="message"></div>
+  </div>
+
+  <script>
+    const keys = document.querySelectorAll('.key');
+    const display = document.getElementById('display');
+    const message = document.getElementById('message');
+    const enter = document.getElementById('enter');
+
+    let enteredCode = "";
+    const correctCode = "1234"; // ✅ You can change this to your real passcode
+
+    keys.forEach(key => {
+      key.addEventListener('click', () => {
+        if (enteredCode.length < 4) {
+          enteredCode += key.textContent;
+          display.textContent = "*".repeat(enteredCode.length);
+        }
+      });
+    });
+
+    enter.addEventListener('click', () => {
+      if (enteredCode === correctCode) {
+        // ✅ Go directly to next page if correct
+        window.location.href = "forwad.html";
+      } else {
+        message.textContent = "❌ Incorrect Passcode!";
+        message.style.color = "#ff4444";
+      }
+      enteredCode = "";
+      display.textContent = "";
+    });
+  </script>
+</body>
+</html>

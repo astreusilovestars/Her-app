@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop | SHID Alerts</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  <header>
+    <div class="logo">SHID Alerts</div>
+    <div class="icons">
+      <a href="index.html" class="home-link">Home</a>
+    </div>
+  </header>
+  <section id="newsletter" class="newsletter-section">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Stay safe and updated with our latest electronics, tools, and alerts!</p>
+      <form class="newsletter-form" onsubmit="subscribe(event)">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="message" class="subscribe-message"></p>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
